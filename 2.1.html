@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频播放器</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+   .video-player-container {
+      width: 600px;
+      margin: 50px auto;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    video {
+      width: 100%;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+   .controls {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      background-color: #e6e6e6;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+   .controls button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+   .play-pause {
+      width: 30px;
+      height: 30px;
+    }
+
+   .stop {
+      width: 30px;
+      height: 30px;
+    }
+
+   .fast-forward,
+   .rewind {
+      width: 30px;
+      height: 30px;
+    }
+
+   .time-display {
+      color: #333;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="video-player-container">
+    <input type="file" id="videoInput">
+    <video id="videoPlayer" controls></video>
+    <div class="controls">
+      <button id="rewindButton">
+        <img class="rewind" src="rewind-icon.svg" alt="Rewind">
+      </button>
+      <button id="playPauseButton">
+        <img class="play-pause" src="play-icon.svg" alt="Play" id="playIcon">
+        <img class="play-pause" src="pause-icon.svg" alt="Pause" id="pauseIcon" style="display: none;">
+      </button>
+      <button id="stopButton">
+        <img class="stop" src="stop-icon.svg" alt="Stop">
+      </button>
+      <button id="fastForwardButton">
+        <img class="fast-forward" src="fast-forward-icon.svg" alt="Fast Forward">
+      </button>
+      <div class="time-display" id="timeDisplay">0:00 / 0:00</div>
+    </div>
+  </div>
+
+  <script>
+    const videoInput = document.getElementById('videoInput');
+    const videoPlayer = document.getElementById('videoPlayer');
+    const playPauseButton = document.getElementById('playPauseButton');
+    const playIcon = document.getElementById('playIcon');
+    const pauseIcon = document.getElementById('pauseIcon');
+    const stopButton = document.getElementById('stopButton');
+    const fastForwardButton = document.getElementById('fastForwardButton');
+    const rewindButton = document.getElementById('rewindButton');
+    const timeDisplay = document.getElementById('timeDisplay');
+
+    videoInput.addEventListener('change', function (event) {
+      const file = event.target.files[0];
+      if (file && file.type.startsWith('video/')) {
+        const videoURL = URL.createObjectURL(file);
+        videoPlayer.src = videoURL;
+        videoPlayer.play();
+      }
+    });
+
+    videoPlayer.addEventListener('play', function () {
+      playIcon.style.display = 'none';
+      pauseIcon.style.display = 'inline-block';
+    });
+
+    videoPlayer.addEventListener('pause', function () {
+      playIcon.style.display = 'inline-block';
+      pauseIcon.style.display = 'none';
+    });
+
+    videoPlayer.addEventListener('timeupdate', function () {
+      const currentTime = videoPlayer.currentTime;
+      const duration = videoPlayer.duration;
+      const formattedTime = formatTime(currentTime) + ' / ' + formatTime(duration);
+      timeDisplay.textContent = formattedTime;
+    });
+
+    function formatTime(time) {
+      const minutes = Math.floor(time / 60);
+      const seconds = Math.floor(time % 60);
+      return minutes + ':' + (seconds < 10? '0' : '') + seconds;
+    }
+
+    playPauseButton.addEventListener('click', function () {
+      if (videoPlayer.paused) {
+        videoPlayer.play();
+      } else {
+        videoPlayer.pause();
+      }
+    });
+
+    stopButton.addEventListener('click', function () {
+      videoPlayer.pause();
+      videoPlayer.currentTime = 0;
+      playIcon.style.display = 'inline-block';
+      pauseIcon.style.display = 'none';
+    });
+
+    fastForwardButton.addEventListener('click', function () {
+      videoPlayer.currentTime += 15;
+    });
+
+    rewindButton.addEventListener('click', function () {
+      videoPlayer.currentTime -= 15; 
+    });
+  </script>
+
+</body>
+
+</html>
