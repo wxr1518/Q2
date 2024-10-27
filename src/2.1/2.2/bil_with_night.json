@@ -1,0 +1,17 @@
+{
+    "name": "bil_with_night",
+    "manifest_version": 2,
+    "version": "1.0",
+    "description": "make bil to the dark theme",
+    "browser_action": {
+    "default_icon": "m.jpg"
+    },
+    "permissions": [
+    "tabs", "http:///","https:///"
+    ],
+    "content_scripts": [ {
+    "matches": ["http://login.cuit.edu.cn/Login/xLogin/Login.asp"],
+    "js": ["punchtheclock.js"]
+            }
+        ]
+    }

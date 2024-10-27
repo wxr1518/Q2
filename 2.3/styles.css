@@ -1,0 +1,104 @@
+body {
+    font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+  }
+  
+  #searchInput {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  #videoList {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  
+  .video-item {
+    width: 200px;
+    height: 320px;
+    margin: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .video-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+  }
+  
+  .video-item.video-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 10px;
+    border-radius: 0 0 12px 12px;
+  }
+  
+  #videoPlayerContainer {
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+  }
+  
+  #videoPlayer {
+    width: 98%;
+  }
+  
+  .controls {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+  }
+  
+  #playPauseBtn {
+    padding: 8px 12px;
+    background-color: #007aff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  
+  #speedSelect {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    font-size: 14px;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #eee;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+  
+  #progress {
+    height: 100%;
+    background-color: #007aff;
+    border-radius: 4px;
+  }

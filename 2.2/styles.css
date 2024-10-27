@@ -1,0 +1,54 @@
+.night-mode body {
+    background-color: #222222;
+    color: #eaeaea;
+}
+.night-mode a {
+    color: #88c4ff;
+}
+
+.night-mode a:hover {
+    color: #b8e0ff;
+}
+.night-mode input,
+.night-mode textarea,
+.night-mode select {
+    background-color: #333333;
+    color: #eaeaea;
+    border: 1px solid #555555;
+}
+.night-mode h1,
+.night-mode h2,
+.night-mode h3,
+.night-mode h4,
+.night-mode h5,
+.night-mode h6 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.night-mode p {
+    margin-bottom: 15px;
+}
+.night-mode img,
+.night-mode video {
+    opacity: 0.8;
+}
+
+.night-mode img:hover,
+.night-mode video:hover {
+    opacity: 1;
+}
+.night-mode table {
+    border-collapse: collapse;
+}
+
+.night-mode table th,
+.night-mode table td {
+    border: 1px solid #555555;
+    padding: 8px;
+}
+
+.night-mode table th {
+    background-color: #333333;
+    color: #eaeaea;
+}
