@@ -1,4 +1,4 @@
-// 模拟视频数据
+
 const videos = [
     {
       title: '香蕉君',
@@ -114,5 +114,24 @@ const videos = [
     const progress = (videoPlayer.currentTime / videoPlayer.duration) * 100;
     progressBar.style.width = progress + '%';
   });
+  const danmakuContainer = document.getElementById('danmakuContainer');
+const danmakuInput = document.getElementById('danmakuInput');
+const sendDanmakuBtn = document.getElementById('sendDanmakuBtn');
+
+sendDanmakuBtn.addEventListener('click', () => {
+  const text = danmakuInput.value;
+  if (text) {
+    const danmaku = document.createElement('div');
+    danmaku.classList.add('danmaku');
+    danmaku.textContent = text;
+    danmaku.style.left = `${Math.random() * 100}vw`;
+    danmaku.style.top = `${Math.random() * 80}vh`;
+    danmakuContainer.appendChild(danmaku);
+    danmakuInput.value = '';
+    setTimeout(() => {
+      danmaku.remove();
+    }, 5000);
+  }
+});
   displayVideos();
   document.getElementById('searchInput').addEventListener('input', searchVideos);
