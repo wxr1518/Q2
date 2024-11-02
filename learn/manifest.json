@@ -5,26 +5,28 @@
 	"description": "深夜使用",
 	"icons":
 	{
-		"16": "img/bil_dark16.png",
-		"48": "img/bil_dark48.png",
+		"16": "img/bil_dark128.png",
+		"48": "img/bil_dark128.png",
 		"128": "img/bil_dark128.png"
 	},
-	"background":
-	{
-		"service_worker": "background.html"
-	},
-	"browser_action": 
+
+	"action": 
 	{
 		"default_icon": "img/bil_dark128.png",
 		"default_title": "这是一个bilibili增强插件",
 		"default_popup": "popup.html"
 	},
-    "permissions": ["https://www.bilibili.com/*"],
+    "permissions": ["https://*.bilibili.com/*"],
     "content_scripts": [
         {
-            "matches": ["https://www.bilibili.com/*"],
+            "matches": ["https://*.bilibili.com/*"],
             "js": ["script.js"],
             "css": ["styles.css"]
-        }
+
+        } 
     ]
+
+
+
+
 }
