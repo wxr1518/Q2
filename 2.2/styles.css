@@ -1,5 +1,5 @@
 
-:root * {
+:root * [color-mode='dark']{
     --bg1: var(--Ga10);
     --bg2: var(--Ga10);
     --bg3: var(--Ga9);
@@ -18,4 +18,24 @@
     --bpx-aux-footer-bg: #383a3f9e;
     --bpx-aux-content-bg: #383a3f9e;
     --bpx-aux-content-font1: rgb(255, 255, 255);
+    }
+:root * [color-mode='light']{
+    --bg1: var(--Wh0);
+    --bg2: var(--Ga0);
+    --bg3: var(--Ga1);
+    --bg1_float: var(--Ga11);
+    --bg2_float: var(--Ga12);
+    --text1: var(--Ga10);
+    --text2: var(--Ga7);
+    --line_light: var(--Wh0);
+    --graph_bg_thin: var(--Wh0);
+    --bpx-dmsend-main-bg: var(--Wh0);
+    --graph_bg_regular: var(--Wh0);
+    --graph_bg_thick: white;
+    --bpx-dmsend-input-bg: white;
+    --line_regular: var(--Ga2);
+    --bpx-aux-header-bg: var(--graph_bg_regular);
+    --bpx-aux-footer-bg: var(--graph_bg_regular);
+    --bpx-aux-content-bg: var(--bg1);
+    --bpx-aux-content-font1: black;
     }

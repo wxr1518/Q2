@@ -1,0 +1,25 @@
+#pop {
+    width: 256px;
+    height: 280px;
+}
+.center {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+button {
+    width: 170px;
+    height: 28px;
+    font-size: medium;
+    background-color: rgb(164, 122, 204);
+    color: aliceblue;
+    border: 0cap;
+    border-radius: 5px;
+    transition: 2s;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: aliceblue;
+    color: black;
+}

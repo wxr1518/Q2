@@ -3,11 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <link rel="stylesheet" href="css/pop.css">
 </head>
-<body>
-    <div>
-        <button></button>
+<body style="background-color: rgb(36, 36, 36);">
+    <div id = 'pop'>
+        <body>
+            <div class="center">
+                <h2 style="color: aliceblue;">设置倍速</h2>
+                <input type="number" id="speedinput" placeholder="请输入倍速" >
+                <button id="setspeed">确定</button>
+                <script src="speed.js"></script>
+            </div>
+            <div class="center">
+                <h2 style="color: aliceblue;">夜间模式</h2>
+                <button id="setdark">开启</button>
+                <br>
+                <br>
+                <button id="setlight">关闭</button>
+            </div>
+            <script src="./js/pop.js"></script>
     </div>
 </body>
 </html>
