@@ -1,4 +1,5 @@
 # Q2
-2.1  A simple video player 
-2.2  js for bilibili dark inside
-2.3  a batter player
+2.1  一个简单的视频播放器
+2.2  深夜使用的哔哩哔哩网站插件
+2.3  干倒小破站
+ps   code都在 ./src 中
